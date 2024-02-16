@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <title>Daftar Anggota</title>
+    <link rel="stylesheet" href="style/StyleNavbar.css" />
+    <link rel="stylesheet" href="style/StyleBody.css" />
+    <link rel="stylesheet" href="style/StyleMessage.css" />
+    <link rel="shortcut icon" href="images/logo_perpusnas_2015.png">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">"
+
+  </head>
+  <body>
+<!-- navbar -->
+<nav class="navbar1">
+  <div class="logo_item">
+      <i class="bx bx-menu" id="sidebarOpen"></i>
+      <img src="images/logo_perpusnas_2015.png" alt="">Perpustakaan Kota Bogor
+  </div>
+
+  <div class="search_bar">
+      <input type="text" placeholder="Search"/> 
+  </div>
+
+  <div class="navbar_content">
+      <i class="bi bi-grid"></i>
+      <i class='bx bx-sun' id="darkLight"></i>
+      <div class="dropdown">
+        <i class='bx bx-bell dropdown-toggle'></i>
+        <div class="dropdown-menu notification">
+          <div class="notification-header">Notifikasi</div>
+          <ul class="notification-list" id="notification-list">
+            <!-- Notifications will be dynamically added here -->
+            <li><b>Tidak Ada </b>Notifikasi Terbaru</li>        
+          </ul>
+          <div class="notification-footer">
+            <a href="#">Lihat semua notifikasi</a>
+          </div>
+        </div>
+      </div>
+  </div>
+</nav>
+
+    <!-- sidebar -->
+    <nav class="sidebar">
+      <div class="menu_content">
+        <ul class="menu_items">
+          <div class="menu_title menu_dahsboard"></div>
+          
+          <li class="item">
+            <a href="Home.html" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-home-alt"></i>
+              </span>
+              <span class="navlink">Home</span>
+            </a>
+          </li>
+          
+        </ul>
+
+        <ul class="menu_items">
+          <div class="menu_title menu_items"></div>
+          
+          <li class="item">
+            <a href="DaftarBuku.html" class="nav_link">
+              <span class="navlink_icon">
+                <i class='bx bxs-book'></i>
+              </span>
+              <span class="navlink">Daftar Buku</span>
+            </a>
+          </li>
+
+          <li class="item">
+            <a href="DaftarAnggota.html" class="nav_link">
+              <span class="navlink_icon">
+                <i class='bx bx-user-plus' ></i>
+              </span>
+              <span class="navlink">Daftar Anggota</span>
+            </a>
+          </li>
+
+          <li class="item">
+            <a href="BukuTamuNonAnggota.html" class="nav_link">
+              <span class="navlink_icon">
+                <i class='bx bxs-user-badge' ></i>
+              </span>
+              <span class="navlink">Buku Tamu</span>
+            </a>
+          </li>
+          
+        </ul>
+        <ul class="menu_items">
+          <div class="menu_title menu_setting"></div>
+          
+          <li class="item">
+            <a href="Login.html" class="nav_link">
+              <span class="navlink_icon">
+                <i class='bx bx-log-in-circle' ></i>
+              </span>
+              <span class="navlink">Login</span>
+            </a>
+          </li>
+          <li class="item">
+            <a href="SettingNonAnggota.html" class="nav_link">
+              <span class="navlink_icon">
+                <i class="bx bx-cog"></i>
+              </span>
+              <span class="navlink">Setting</span>
+            </a>
+          </li>
+         
+        </ul>
+
+        <!-- Sidebar Open / Close -->
+        <div class="bottom_content">
+          <div class="bottom expand_sidebar">
+            <span> Expand</span>
+            <i class='bx bx-log-in' ></i>
+          </div>
+          <div class="bottom collapse_sidebar">
+            <span> Collapse</span>
+            <i class='bx bx-log-out'></i>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+    <!-- Content -->
+
+    <section class="container">
+        
+        <header><b>LOGIN</b><br>Pengelola Perpustakaan Kota Bogor</header>
+        <br>
+        <div class="btn-group d-flex justify-content-center">
+          <a href="Login.html" id="loginanggota" class="btn btn-primary" >Anggota Perpustakaan Kota Bogor</a>
+          <a href="LoginAdmin.html" id="loginpengelola" class="btn btn-primary active">Pengelola Perpustakaan Kota Bogor</a>
+        </div>
+        <br>
+        <div id="errorMessage" class="message" style="display: none;">
+          <p>Username / Password Yang Anda Masukkan Salah</p>
+        </div>
+        <form class="form" id="login-form2" action="" method="post">
+  
+          <div class="input-box">
+            <label>Username</label>
+            <input id="username" type="text" placeholder="Masukkan Username" required />
+          </div>
+  
+          <div class="input-box">
+            <label>Password</label>
+            <input id="password2" type="password" placeholder="Masukkan Password" required />
+          </div>
+
+          <br>
+          <div class="btn-group d-flex justify-content-center">
+            <button type="submit" value="Login" id="submit" class="btn btn-primary active" >Login</button>
+            </div>
+          
+        </form>
+        <br>
+        
+        
+      </section>
+
+    <!-- JavaScript -->
+    <script src="JavaScript/Login.js"></script>
+    <script src="JavaScript/Navbar.js"></script>
+  </body>
+</html>

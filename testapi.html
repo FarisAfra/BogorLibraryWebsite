@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulir Login</title>
+</head>
+<body>
+    <h1>Formulir Login</h1>
+    <form id="login-form">
+        <label for="email">Username:</label>
+        <input type="text" id="email" name="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <input type="submit" value="Login">
+        <button type="submit" value="Login" id="submit">Login</button>
+    </form>
+
+    <div id="errorMessage" class="message" style="display: none;">
+        <p>Login Failed</p>
+    </div>
+
+    <script>
+
+        const url = 'https://us-east-1.aws.data.mongodb-api.com/app/serviceveedbook-ltudl/endpoint/GetAnggotaAPI'
+        const errorMessage = document.getElementById('errorMessage');
+
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            // Data berhasil diterima dari API
+        console.log(data);
+        // Lakukan tindakan lain dengan data yang diterima
+    })
+
+fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        // Data berhasil diterima dari API
+        console.log(data);
+
+        // Mengambil data email dari setiap objek data
+        data.forEach(item => {
+            console.log(item.Email);
+            console.log(item.Password);
+            document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            // Melakukan verifikasi login
+            if (email === (item.Email) && password === (item.Password)) {
+                
+                window.location.href = 'Home.html'
+                // Lakukan tindakan lain setelah login berhasil
+            }else {
+                console.log("Tidak ada data email pada objek ini");
+                errorMessage.style.display = 'block';
+            }
+        });
+        
+        });
+    })
+    .catch(error => {
+        // Terjadi kesalahan saat mengambil data dari API
+        console.log(error);
+        // Lakukan penanganan kesalahan yang sesuai
+    });
+ 
+
+    </script>
+</body>
+</html>
